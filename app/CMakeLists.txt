@@ -1,6 +1,6 @@
 add_executable(${PROJECT_NAME} main.c)
 
-target_link_libraries(${PROJECT_NAME} PRIVATE Widgets FFmpeg ${GTK_LIBRARIES} ${SDL2_LIBRARIES} 
+target_link_libraries(${PROJECT_NAME} PRIVATE Widgets FFmpeg Sys ${GTK_LIBRARIES} ${SDL2_LIBRARIES} 
 			${GSTREAMER_LIBRARIES} ${AVCODEC_LIBRARY} ${AVFORMAT_LIBRARY}
 			${AVUTIL_LIBRARY} ${AVDEVICE_LIBRARY}
 			)
