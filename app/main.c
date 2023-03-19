@@ -61,7 +61,7 @@ int main(int argc, char **argv){
 	//videoencoder("/home/lascelle/Videos/Sea.mp4", "libx264");
 	//videoencoder("/home/lascelle/Videos/test.mp4", "mpeg1video");
 
-	decode_encode_video("/home/lascelle/Videos/test.mp4", "testoutput.mp4", "mp4");
-
+	//decode_encode_video("/home/lascelle/Videos/test.mp4", "testoutput.mp4", "mp4");
+	run();
 	return EXIT_SUCCESS;
 }

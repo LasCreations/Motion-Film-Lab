@@ -52,26 +52,6 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/lascelle/Projects/Video-Editor/build/app/cmake_install.cmake")
 endif()
 
-if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/build/app/MFL" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/build/app/MFL")
-    file(RPATH_CHECK
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/build/app/MFL"
-         RPATH "")
-  endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/build/app" TYPE EXECUTABLE FILES "/home/lascelle/Projects/Video-Editor/build/app/MFL")
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/build/app/MFL" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/build/app/MFL")
-    file(RPATH_CHANGE
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/build/app/MFL"
-         OLD_RPATH "/usr/include:/usr/include/SDL2:"
-         NEW_RPATH "")
-    if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/build/app/MFL")
-    endif()
-  endif()
-endif()
-
 if(CMAKE_INSTALL_COMPONENT)
   set(CMAKE_INSTALL_MANIFEST "install_manifest_${CMAKE_INSTALL_COMPONENT}.txt")
 else()

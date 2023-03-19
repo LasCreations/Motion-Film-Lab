@@ -47,4 +47,4 @@ link_directories(${GLIB_LIBRARY_DIRS} ${GSTREAMER_LIBRARY_DIRS})
 add_subdirectory(libs)
 add_subdirectory(app)
 
-INSTALL (TARGETS ${PROJECT_NAME} DESTINATION build/app)
+#INSTALL (TARGETS ${PROJECT_NAME} DESTINATION ${PROJECT_SOURCE_DIR}/build)

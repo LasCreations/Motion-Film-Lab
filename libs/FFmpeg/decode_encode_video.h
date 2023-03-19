@@ -18,6 +18,8 @@
 #define AUDIO_REFILL_THRESH 4096
 
 
+void run();
+
 static int check_sample_fmt(AVCodec *codec, enum AVSampleFormat sample_fmt);
 
 static int select_sample_rate(AVCodec *codec);

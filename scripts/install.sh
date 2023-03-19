@@ -2,4 +2,4 @@
 
 ./build.sh
 
-cd ../build/app ; cmake --install .
+cd ../build/ ; cmake --install . --config Debug
