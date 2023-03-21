@@ -14,10 +14,10 @@ extern int errno;
 
 //Static libraries
 #include <widgets/window.h>
+
 #include <FFmpeg/decodevideo.h>
 #include <FFmpeg/demuxvideo.h>
 #include <FFmpeg/encodevideo.h>
-#include <FFmpeg/decode_encode_video.h>
 
 #include <sys/sys_fileio.h>
 
@@ -54,14 +54,12 @@ int main(int argc, char **argv){
 
 	
 	//DecodeVideo("/home/lascelle/Videos/Sample2.mp4");
-	//demuxer("/home/lascelle/Videos/Sample2.mp4", "test.mp4", "audio.mp3");	
+	demuxer("/home/lascelle/Videos/Sample.mp4", "video.mp4", "audio.mp3");	
 	
 
 	//DO NOT RUN UNTIL UNDERSTOOD FULLY
 	//videoencoder("/home/lascelle/Videos/Sea.mp4", "libx264");
 	//videoencoder("/home/lascelle/Videos/test.mp4", "mpeg1video");
 
-	//decode_encode_video("/home/lascelle/Videos/test.mp4", "testoutput.mp4", "mp4");
-	run();
 	return EXIT_SUCCESS;
 }

@@ -15,6 +15,10 @@ project(MFL
 	DESCRIPTION "Open-Source GUI Video Editor"
 )
 
+file(MAKE_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/data)
+
+
+
 FIND_PACKAGE(PkgConfig REQUIRED)
 FIND_PACKAGE(SDL2 REQUIRED)
 
@@ -47,4 +51,3 @@ link_directories(${GLIB_LIBRARY_DIRS} ${GSTREAMER_LIBRARY_DIRS})
 add_subdirectory(libs)
 add_subdirectory(app)
 
-#INSTALL (TARGETS ${PROJECT_NAME} DESTINATION ${PROJECT_SOURCE_DIR}/build)
