@@ -19,6 +19,10 @@ extern int errno;
 #include <FFmpeg/demuxvideo.h>
 #include <FFmpeg/encodevideo.h>
 
+
+
+#include <SDLLIB/sdlwindow.h>
+
 #include <sys/sys_fileio.h>
 
 
@@ -26,6 +30,8 @@ int main(int argc, char **argv){
 
 	//Initialize Gtk
 	gtk_init(&argc, &argv);
+
+	sdlwindow();
 
 	//Create Window
 	//LaunchWindow();
@@ -54,7 +60,7 @@ int main(int argc, char **argv){
 
 	
 	//DecodeVideo("/home/lascelle/Videos/Sample2.mp4");
-	demuxer("/home/lascelle/Videos/Sample.mp4", "video.mp4", "audio.mp3");	
+	//demuxer("/home/lascelle/Videos/Sample.mp4", "video.mp4", "audio.mp3");	
 	
 
 	//DO NOT RUN UNTIL UNDERSTOOD FULLY

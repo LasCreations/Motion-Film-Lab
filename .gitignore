@@ -1,7 +1,6 @@
-build/app
-build/CMakeFiles
-build/libs
-build/Makefile
+build/
+data/ 
+
 
 
 
