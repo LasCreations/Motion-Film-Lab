@@ -1,7 +1,7 @@
 
 #include "decodevideo.h"
 
-void DecodeVideo(char filename[]){
+void decodevideo(char filename[]){
 	AVFormatContext *fmt_ctx = NULL;
 	const AVDictionaryEntry *tag = NULL;
 	int ret;

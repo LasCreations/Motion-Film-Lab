@@ -15,7 +15,7 @@ project(MFL
 	DESCRIPTION "Open-Source GUI Video Editor"
 )
 
-file(MAKE_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/data)
+file(MAKE_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/data/projects)
 
 
 

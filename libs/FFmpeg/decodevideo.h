@@ -5,6 +5,6 @@
 #include <libavformat/avformat.h>
 #include <stdbool.h>
 
-void DecodeVideo(char filename[]);
+void decodevideo(char filename[]);
 
 #endif

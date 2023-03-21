@@ -59,8 +59,8 @@ int main(int argc, char **argv){
 	*/
 
 	
-	//DecodeVideo("/home/lascelle/Videos/Sample2.mp4");
-	//demuxer("/home/lascelle/Videos/Sample.mp4", "video.mp4", "audio.mp3");	
+	//decodevideo("/home/lascelle/Videos/Sample2.mp4");
+	//demuxer("/home/lascelle/Videos/tommy.mp4", "video.mp4", "audio.mp3");	
 	
 
 	//DO NOT RUN UNTIL UNDERSTOOD FULLY
