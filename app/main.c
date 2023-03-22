@@ -19,8 +19,6 @@ extern int errno;
 #include <FFmpeg/demuxvideo.h>
 #include <FFmpeg/encodevideo.h>
 
-
-
 #include <SDLLIB/sdlwindow.h>
 
 #include <sys/sys_fileio.h>

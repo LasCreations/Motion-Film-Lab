@@ -33,8 +33,8 @@ sudo ./uninstall
 ```
 
 ## Directory Structure
-- `app`: Contains . 
-- `build`:  . 
-- `data`: Contains . 
-- `libs`: Contains . 
-- `scripts`: Contains . 
+- `app`: stores main source file
+- `build`: binary and cache folder  
+- `data`: project data files 
+- `libs`: static libraries used throughout the program 
+- `scripts`: shell files used to install/uninstall software
