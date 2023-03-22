@@ -21,7 +21,7 @@ static int get_format_from_sample_fmt(const char **fmt, enum AVSampleFormat samp
 
 static void decode(AVCodecContext *dec_ctx, AVPacket *pkt, AVFrame *frame,FILE *outfile);
 
-
+int decodeaudio(const char *filename, const char *outputname);
 
 
 #endif

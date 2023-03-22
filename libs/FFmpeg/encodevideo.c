@@ -52,6 +52,7 @@ int videoencoder(char *filename, char *codec_name){
 	codec_name = argv[2];
 	*/
 
+	//avcodec_register_all();
 
 	/* find the mpeg1video encoder */
 	codec = avcodec_find_encoder_by_name(codec_name);
