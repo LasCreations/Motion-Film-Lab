@@ -10,6 +10,7 @@
 #include <FFmpeg/decodeaudio.h>
 
 #include <FFmpeg/transcoding.h>
+#include <FFmpeg/remux.h>
 
 #include <FFmpeg/metadata.h>
 
@@ -18,7 +19,8 @@
 #include <sys/sys_fileio.h>
 
 int main(int argc, char **argv){
-
+	
+	//Check which OS the executable is running on
 	#ifdef _WIN32
 		printf("Running on windows");
 	#elif __linux__
@@ -31,27 +33,27 @@ int main(int argc, char **argv){
 	gtk_init(&argc, &argv);
 
 	
-	//transcodevideo("/home/lascelle/Videos/Sample.mp4", "test.mkv");
+	/*Transcoding is the process of converting a video or audio file from one format to another. 
+	 * Unlike remuxing, transcoding involves re-encoding the video and/or audio streams 
+	 * to a new format, which can result in a loss of quality*/
+	transcodevideo("/home/lascelle/Videos/Sample.mp4", "test.mkv");
 	
-	//Decoding an original video
-	//decodevideo("/home/lascelle/Videos/Sample.mp4");
-
-	//showmetadata("/home/lascelle/Videos/Sample.mp4");
-
-	/*Demuxing a video into two different streams
-	* Video Stream (Without audio)
-	* Audio Stream
-	*/
-	//demuxer("/home/lascelle/Videos/future.mp4", "video.mp4", "audio.mp3");
+	/*copying the video and audio streams from one container format to another, without re-encoding the streams.*/
+	remux("/home/lascelle/Videos/future.mp4", "video.mkv");
 	
-	//videoencoder("video.mp4", "libx264");
-	
-	//encodeaudio("audio.mp3");
-	//decodeaudio("audio.mp3", "decodedaudio.mp3");
+	/*transforming a compressed video stream (in a format like H.264 or MPEG-4)
+	 * into an uncompressed video stream that can be displayed or edited */
+	decodevideo("/home/lascelle/Videos/Sample.mp4");
 
-	//DO NOT RUN UNTIL UNDERSTOOD FULLY
-	//videoencoder("/home/lascelle/Videos/Sea.mp4", "libx264");
-	//videoencoder("/home/lascelle/Videos/test.mp4", "mpeg1video");
+	/* is information that describes the content, structure, and properties of a file*/
+	showmetadata("/home/lascelle/Videos/Sample.mp4");	
+
+	/* This splits the video file into two streams -> Audio and Video */
+	demuxer("/home/lascelle/Videos/future.mp4", "video.mp4", "audio.raw");
+
+
+
+
 	
 	return EXIT_SUCCESS;
 }
