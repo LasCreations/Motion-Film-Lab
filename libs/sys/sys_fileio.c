@@ -9,3 +9,14 @@ void CreateFile(){
 		perror("Error creating file");
 	}
 }
+
+
+void MoveFile(){
+	// Use the mv system call to move the file to the directory
+	
+	if (rename("newfile.txt", "../../data/test/new.txt") == -1) {
+		perror("Error moving file");
+		//exit(EXIT_FAILURE);
+	}
+	
+}

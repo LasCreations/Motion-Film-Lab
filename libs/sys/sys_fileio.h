@@ -19,6 +19,7 @@ extern int errno;
 
 void CreateFile();
 
+void MoveFile();
 
 #endif
 

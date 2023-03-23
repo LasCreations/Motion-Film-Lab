@@ -13,4 +13,4 @@ if [ -d "$DIR" ]; then
   mkdir ../build
 fi
 
-cd ../build/ ; cmake ..; cmake --build .
+cd ../build/ ; cmake -DCMAKE_BUILD_TYPE=Debug -S ..; cmake --build .

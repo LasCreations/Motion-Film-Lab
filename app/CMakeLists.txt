@@ -8,7 +8,8 @@ endif()
 
 target_link_libraries(${PROJECT_NAME} PRIVATE Widgets FFmpeg Sys SDLSTATICLIB ${GTK_LIBRARIES} ${SDL2_LIBRARIES} 
 			${GSTREAMER_LIBRARIES} ${AVCODEC_LIBRARY} ${AVFORMAT_LIBRARY}
-			${AVUTIL_LIBRARY} ${AVDEVICE_LIBRARY} ${CMAKE_THREAD_LIBS_INIT} -lm -lswresample -lz -lswscale -lavutil)
+			${AVUTIL_LIBRARY} ${AVDEVICE_LIBRARY} ${CMAKE_THREAD_LIBS_INIT} -lavfilter -lpostproc 
+			-lavcodec -lm -lswresample -lz -lswscale -lavutil -lx264)
 
 target_include_directories(
 			${PROJECT_NAME} PRIVATE ${AVCODEC_INCLUDE_DIR}
