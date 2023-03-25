@@ -30,38 +30,45 @@ static int get_format_from_sample_fmt(const char **fmt, enum AVSampleFormat samp
 	return -1;
 }
 
-static void decode(AVCodecContext *dec_ctx, AVPacket *pkt, AVFrame *frame, FILE *outfile){
+static int decode(AVCodecContext *dec_ctx, AVPacket *pkt, AVFrame *frame, FILE *outfile){
 	int i, ch;
 	int ret, data_size;
 
 	/* send the packet with the compressed data to the decoder */
 	ret = avcodec_send_packet(dec_ctx, pkt);
 	if (ret < 0) {
-		fprintf(stderr, "Error submitting the packet to the decoder\n");
-		exit(1);
-	}
+		//fprintf(stderr, "Error submitting the packet to the decoder\n");
+		fprintf(stderr, "Error submitting a packet for decoding (%s)\n", av_err2str(ret));
+		//exit(1);
+		return ret;
+	} 
 
 	/* read all the output frames (in general there may be any number of them */
 	while (ret >= 0) {
 		ret = avcodec_receive_frame(dec_ctx, frame);
 		if (ret == AVERROR(EAGAIN) || ret == AVERROR_EOF)
-			return;
+			return 0;
 		else if (ret < 0) {
-			fprintf(stderr, "Error during decoding\n");
-			exit(1);
+			fprintf(stderr, "Error during decoding (%s)\n", av_err2str(ret));
+			return ret;
+			//fprintf(stderr, "Error during decoding\n");
+			//exit(1);
 		}
 		
 		data_size = av_get_bytes_per_sample(dec_ctx->sample_fmt);
 		if (data_size < 0) {
 			/* This should not occur, checking just for paranoia */
+			
 			fprintf(stderr, "Failed to calculate data size\n");
-			exit(1);
+			return 0;
+			//exit(1);
 		}
 
 		for (i = 0; i < frame->nb_samples; i++)
 			for (ch = 0; ch < dec_ctx->ch_layout.nb_channels; ch++)
 				fwrite(frame->data[ch] + data_size*i, 1, data_size, outfile);
 	}
+	return 0;
 }
 
 int decodeaudio(const char *filename, const char *outfilename){
