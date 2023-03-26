@@ -91,7 +91,7 @@ int encodeaudio(const char *filename){
 	float t, tincr;
 
 	/* find the MP2 encoder */
-	codec = avcodec_find_encoder(AV_CODEC_ID_MP2);
+	codec = avcodec_find_encoder(AV_CODEC_ID_MP3);
 	if (!codec) {
 		fprintf(stderr, "Codec not found\n");
 		exit(1);

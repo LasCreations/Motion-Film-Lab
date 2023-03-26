@@ -1,7 +1,7 @@
 
-#include "decodevideo.h"
+#include "decodestream.h"
 
-void decodevideo(char filename[]){
+void decodestream(char filename[]){
 	AVFormatContext *fmt_ctx = NULL;
 	const AVDictionaryEntry *tag = NULL;
 	int ret;
@@ -16,8 +16,7 @@ void decodevideo(char filename[]){
 	}
 
 	// loop streams and dump info
-	for (int i = 0; i < fmt_ctx->nb_streams; i++)
-	{
+	for (int i = 0; i < fmt_ctx->nb_streams; i++){
 		av_dump_format(fmt_ctx, i, filename, false);		
 	}
 	

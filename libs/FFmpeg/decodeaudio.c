@@ -90,6 +90,7 @@ int decodeaudio(const char *filename, const char *outfilename){
 	
 	/* find the MPEG audio decoder */
 	codec = avcodec_find_decoder(AV_CODEC_ID_MP2);
+	//codec = avcodec_find_decoder(AV_CODEC_ID_MP3);
 	if (!codec) {
 		fprintf(stderr, "Codec not found\n");
 		exit(1);
@@ -176,6 +177,7 @@ int decodeaudio(const char *filename, const char *outfilename){
 	}
 	
 	n_channels = c->ch_layout.nb_channels;
+
 	if ((ret = get_format_from_sample_fmt(&fmt, sfmt)) < 0)
 		goto end;
 

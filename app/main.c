@@ -2,7 +2,7 @@
 //Static libraries
 #include <widgets/window.h>
 
-#include <FFmpeg/decodevideo.h>
+#include <FFmpeg/decodestream.h>
 #include <FFmpeg/demuxvideo.h>
 #include <FFmpeg/encodevideo.h>
 
@@ -44,15 +44,17 @@ int main(int argc, char **argv){
 	/*transforming a compressed video stream (in a format like H.264 or MPEG-4)
 	 * into an uncompressed video stream that can be displayed or edited */
 	//decodevideo("/home/lascelle/Videos/Sample.mp4");
-	decodevideo("/home/lascelle/Videos/tommylee.mp3");
-
+	//decodestream("/home/lascelle/Videos/tommylee.mp3");
+	
 	/* is information that describes the content, structure, and properties of a file*/
 	//showmetadata("/home/lascelle/Videos/Sample.mp4");	
 
 	/* This splits the video file into two streams -> Audio and Video */
-	//demuxer("/home/lascelle/Videos/future.mp4", "video.mp4", "audio.raw");
+	//demuxer("/home/lascelle/Videos/future.mp4", "video.mp4", "audio.mp3");
+	//decodeaudio("audio.mp2", "testaudio.wav");
 
 	//decodeaudio("/home/lascelle/Videos/tommylee.mp3", "testaudio.wav");
 	
+	encodeaudio("audio.mp3");
 	return EXIT_SUCCESS;
 }
