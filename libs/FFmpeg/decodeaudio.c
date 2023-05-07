@@ -1,5 +1,3 @@
-
-
 #include "decodeaudio.h"
 #include <asm-generic/errno-base.h>
 #include <libavcodec/codec_id.h>

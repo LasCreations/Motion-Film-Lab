@@ -1,7 +1,5 @@
 #! /bin/sh
 
-
-
 DIR="../build"
  
 if [ -d "$DIR" ]; then

@@ -3,58 +3,21 @@
 #include <widgets/window.h>
 
 #include <FFmpeg/decodestream.h>
-#include <FFmpeg/demuxvideo.h>
-#include <FFmpeg/encodevideo.h>
-
-#include <FFmpeg/encodeaudio.h>
 #include <FFmpeg/decodeaudio.h>
-
-#include <FFmpeg/transcoding.h>
-#include <FFmpeg/remux.h>
-
-#include <FFmpeg/metadata.h>
-
-#include <SDLLIB/sdlwindow.h>
-
-#include <sys/sys_fileio.h>
+#include <FFmpeg/encodeaudio.h>
+#include <FFmpeg/scalevideo.h>
 
 int main(int argc, char **argv){
 	
-	//Check which OS the executable is running on
 	#ifdef _WIN32
-		//printf("Running on windows");
+		printf("Not yet compatable on windows");
+		exit(0);
 	#elif __linux__
 		//printf("Running on linux");
 	#elif __APPLE__
-		//printf("Running on Mac OS");
+		printf("Not yet compatable on Mac OS");
+		exit(0);
 	#endif
-
-	//Initialize Gtk
-	//gtk_init(&argc, &argv);
-
 	
-	/*Transcoding is the process of converting a video or audio file from one format to another. 
-	 * Unlike remuxing, transcoding involves re-encoding the video and/or audio streams 
-	 * to a new format, which can result in a loss of quality*/
-	//transcodevideo("/home/lascelle/Videos/Sample.mp4", "test.mkv");
-	
-	/*copying the video and audio streams from one container format to another, without re-encoding the streams.*/
-	//remux("/home/lascelle/Videos/future.mp4", "video.mkv");
-	
-	/*transforming a compressed video stream (in a format like H.264 or MPEG-4)
-	 * into an uncompressed video stream that can be displayed or edited */
-	//decodevideo("/home/lascelle/Videos/Sample.mp4");
-	//decodestream("/home/lascelle/Videos/tommylee.mp3");
-	
-	/* is information that describes the content, structure, and properties of a file*/
-	//showmetadata("/home/lascelle/Videos/Sample.mp4");	
-
-	/* This splits the video file into two streams -> Audio and Video */
-	//demuxer("/home/lascelle/Videos/future.mp4", "video.mp4", "audio.mp3");
-	//decodeaudio("audio.mp2", "testaudio.wav");
-
-	//decodeaudio("/home/lascelle/Videos/tommylee.mp3", "testaudio.wav");
-	
-	encodeaudio("audio.mp3");
 	return EXIT_SUCCESS;
 }
